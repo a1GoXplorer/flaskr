@@ -50,7 +50,7 @@ def add_entry():
     if not session.get('logged_in'):
         abort(401)
     g.db.execute('insert into entries (text, title) values (?, ?)',
-                 [request.form['title'], request.form['text']])
+                 [request.form.get('title') == 'title', request.form.get('text') == 'text'])
     g.db.commit()
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))

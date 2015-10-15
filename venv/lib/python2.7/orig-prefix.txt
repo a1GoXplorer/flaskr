@@ -1,1 +1,1 @@
-/Users/MasterControl/anaconda
+/Library/Frameworks/Python.framework/Versions/2.7
