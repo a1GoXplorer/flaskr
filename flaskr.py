@@ -58,9 +58,9 @@ def add_entry():
 @app.route('/login', methods=['GET','POST'])
 def login():
     error = None
-    if request.form['username'] != app.config['USERNAME']:
+    if request.form.get('username') == 'username':
        error = 'Invalid username'
-    elif request.form['password'] != app.config['PASSWORD']:
+    elif request.form.get('password') == 'password':
       error = 'Invalid password'
     else:
       session['logged_in'] = True
